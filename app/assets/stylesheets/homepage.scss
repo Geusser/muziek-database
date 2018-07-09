@@ -1,0 +1,34 @@
+// Place all the styles related to the homepage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$title_font: Comfortaa, cursive;
+$text_font: Roboto Slab, serif;
+
+.content {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #c481c4;
+  overflow: hidden;
+  border-top: none;
+
+  .sub_title {
+    margin: 1em;
+    font-family: $title_font;
+    color: #2c0f2d;
+  }
+
+  .content_text {
+    margin-left: 1.5em;
+    width: 50em;
+    font-family: $text_font;
+    font-size: 0.75em;
+
+  }
+
+  ul {
+    list-style-type: upper-roman;
+    font-style: $text_font;
+    font-size: 0.9em;
+  }
+}

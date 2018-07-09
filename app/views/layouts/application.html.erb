@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Muziek</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <h1 class="title">Muziek Database</h1>
+    <div id="navigation_bar">
+      <%= link_to 'Homepage', controller: 'homepage', action: 'index' %>
+      <%= link_to 'Catalogus', controller: 'songs', action: 'index' %>
+      <%= link_to 'Voeg nummer toe', controller: 'songs', action: 'new' %>
+      <%= link_to 'Sorteren', controller: 'songs', action: 'sort' %>
+    </div>
+    <%= yield %>
+  </body>
+</html>

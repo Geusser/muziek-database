@@ -1,0 +1,52 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Courgette|Roboto');
+
+.title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2.5em;
+  color: #2c0f2d;
+  text-align: center;
+  margin: 1em 0 2em 0;
+ }
+
+#navigation_bar {
+  width: 80%;
+  margin: 0 auto;
+  height: 3.3em;
+  border: 1px solid #c481c4;
+  font-family: 'Roboto Slab', serif;
+}
+#navigation_bar a:nth-child(1) {
+  border: none;
+}
+#navigation_bar a {
+  color: #2c0f2d;
+  text-decoration: none;
+  background-color: #f9e8f9;
+  transition-duration: 0.5s;
+  border-left: 1px dashed #c481c4;
+  float: left;
+  padding: 1em;
+}
+#navigation_bar a:hover {
+  color: #fff;
+  background-color: #d18ad1;
+}
+#navigation_bar a:visited {
+  color :none;
+}

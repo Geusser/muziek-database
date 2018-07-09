@@ -1,0 +1,23 @@
+<div class="content">
+  <p class="song_title">
+    <%= @song.artist %> - <%= @song.name %>
+  </p>
+  <p class="song_description">
+    <%= @song.description %>
+  </p><br>
+  <p class="extra_info_title"><em>Extra informatie:</em></p>
+  <div class="extra_information">
+    Genre: <%= @song.genre %><br>
+    Album: <%= @song.album %><br>
+    Score: <%= @song.score %><br>
+    Rating: <%= @song.rating %>
+  </div>
+  <br><br>
+  <div class="links_container">
+    <%= link_to 'Back', '/songs' %>&nbsp;|&nbsp;
+    <%= link_to 'Edit', edit_song_path(@song) %>&nbsp;|&nbsp;
+    <%= link_to 'Destroy', song_path(@song),
+        method: :delete,
+        data: { confirm: 'Weet je zeker dat je dit nummer wilt verwijderen?' } %>
+  </div>
+</div>

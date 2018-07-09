@@ -1,0 +1,95 @@
+<div class="content">
+  <h1 class="sub_title">Voeg een nummer toe</h1>
+  <div class="form">
+    <%= form_with scope: :song, url: songs_path, local: true do |form| %>
+    <% if @song.errors.any? %>
+      <div id="error_explanation">
+        <h3>
+          <%= pluralize(@song.errors.count, "error") %> zorgden ervoor dat je
+          dit nummer niet kon opslaan:
+        </h3>
+        <ul>
+          <% @song.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+      <p id="new_song_artist">
+        <%= form.label :artist %>&nbsp;
+        <%= form.text_field(:artist, :placeholder => 'Puppet', :id => 'tf_artist') %>
+      </p>
+      <p id="new_song_name">
+        <%= form.label :name %>&nbsp;
+        <%= form.text_field(:name, :placeholder => 'Bigger Picture', :id => 'tf_name') %>
+      </p>
+      <p id="new_song_genre">
+        <%= form.label :genre %>&nbsp;
+        <%= form.text_field(:genre, :placeholder => 'Indie Dance', :id => 'tf_genre') %>
+      </p>
+      <div id="new_song_description">
+        <%= form.label :description %>&nbsp;
+        <div class="question" id="question_description">
+          <span>&nbsp;?&nbsp;</span>
+          <p class="toh" id="toh_description">
+            <em>Probeer te beschrijven hoe het nummer klinkt; is het emotioneel,
+            of niet? Gaat hij hard, of niet? Je hoeft niet per se een hele
+            bijbel te schrijven.</em>
+          </p>
+        </div><br>
+        <%= form.text_area(:description, :id => 'tf_description',
+          :class => 'tf', :placeholder => 'Ik ben zo diep geraakt!',
+          :rows => '5', :cols => '50') %>
+        <br>
+      </div>
+      <div id="new_song_album">
+        <%= form.label :album %>&nbsp;
+        <div class="question" id="question_album">
+          <span>&nbsp;?&nbsp;</span>
+          <p class="toh" id="toh_album">
+            <em>De naam van het album invullen is niet zo moeilijk, toch?
+            Als het nummer een single is, type dan 'Single' in. Het nummer
+            kan deel zijn van een album en tevens afzonderlijk zijn released.
+            Vul dan alsnog de naam van het album in.</em>
+          </p>
+        </div><br>
+        <%= form.text_field(:album, :value => 'Single', :id => 'tf_album',
+          :class => 'tf', :placeholder => 'Fear is Fleeting EP') %>
+        <br>
+      </div>
+      <div id="new_song_score">
+        <%= form.label :score %>&nbsp;
+        <div class="question" id="question_score">
+          <span>&nbsp;?&nbsp;</span>
+          <p class="toh" id="toh_score">
+            <em>Simpelweg hoe goed Lieke het nummer vindt. Van 0 tot en met 10. Tien
+            natuurlijk je absoluut favoriete nummer en nul als je bijna moet
+            kotsen.</em>
+          </p>
+        </div><br>
+        <span id="score">Liekes score uit 10 --></span>&nbsp;
+        <%= form.number_field(:score, :value => '11', :id => 'tf_score',
+          :class => 'tf') %>
+        <br>
+      </div>
+      <div id="new_song_rating">
+        <%= form.label :rating %>&nbsp;
+        <div class="question" id="question_rating">
+          <span>&nbsp;?&nbsp;</span>
+          <p class="toh" id="toh_rating">
+            <em>Hoe goed Timon het nummer vind. 0 tot en met 7. 0 voor in geen enkele Tier.
+            1 voor in Tier 1, enz. Krijgt een nummer 7, staat het in zijn Top 25.</em>
+          </p>
+        </div><br>
+        <span id="rating">Timons score uit 7 --></span>&nbsp;
+        <%= form.number_field(:rating, :value => '8', :id => 'tf_rating',
+          :class => 'tf') %>
+        <br>
+      </div>
+      <p id="new_song_submit">
+        <%= form.submit %>
+      </p>
+    <% end %>
+  </div>
+</div>

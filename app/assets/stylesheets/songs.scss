@@ -1,0 +1,202 @@
+// Place all the styles related to the songs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$title_font: 'Comfortaa', cursive;
+$songtitle_font: 'Courgette', cursive;
+$text_font: 'Roboto Slab', serif;
+$popup_font: 'Roboto', sans-serif;
+
+.sub_title {
+  font-family: $title_font;
+  font-size: 1.4em;
+}
+
+.form {
+  font-family: $text_font;
+  margin-left: 1.5em;
+}
+
+table.content, table.output {
+  width: 80.2%;
+
+  tr {
+    border-left: 1px solid #f39bf7;
+
+    td {
+      font-family: $text_font;
+      font-size: 0.75em;
+      padding: 0.5em 0 0.5em 1em;
+    }
+
+    th {
+      text-align: left;
+      font-family: $title_font;
+      font-size: 1em;
+      padding: 0.5em 0 0.5em 0.8em;
+    }
+  }
+
+  tr:nth-child(even) {
+    background-color: #f39bf7;
+  }
+
+  tr:nth-child(odd) a {
+    color: #f74cf7;
+    text-decoration: none;
+    padding: 2px;
+  }
+
+  tr:nth-child(even) a {
+    color: #ffd6ff;
+    text-decoration: none;
+    padding: 2px
+  }
+
+  a:hover {
+    // color: #d341d3;
+    font-weight: bold;
+    transition-duration: 0.3s;
+  }
+}
+
+.question {
+  display: inline-block;
+
+  span {
+    display: inline-block;
+    position: relative;
+    background-color: #ad9cad;
+    border-radius: 3px;
+    width: 1.1em;
+    height: 1.5em;
+    font-size: 0.7em;
+    cursor: default;
+  }
+
+  .toh {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    border: 2px solid #c9b7c9;
+    border-radius: 4px;
+    font-family: $popup_font;
+    font-size: 0.75em;
+    width: 10em;
+    padding: 0.25em;
+    opacity: 0;
+    transition: 0.4s ease 0.1s;
+  }
+}
+
+.tf {
+  margin: 0.5em 0 1em 0;
+}
+
+#tf_description {
+  width: 12em;
+  height: 6em;
+}
+#tf_score, #tf_rating {
+  width: 2em;
+}
+#tf_artist, #tf_name, #tf_genre, #tf_album {
+  width: 10em;
+}
+
+
+.question:hover .toh {
+  visibility: visible;
+  position: absolute;
+  background-color: #b2a4b2;
+  opacity: 1;
+  transition: opacity 0.4s ease 0.1s;
+}
+
+.song_title {
+  font-family: $songtitle_font;
+  font-size: 2em;
+  text-align: center;
+}
+
+.song_description {
+  font-family: $text_font;
+  font-size: 1em;
+  margin: 1em auto;
+  width: 33em;
+}
+
+.extra_information {
+  font-family: $text_font;
+  font-size: 0.75em;
+  width: 44em;
+  margin: 0 auto;
+}
+
+.extra_info_title {
+  font-family: $text_font;
+  font-size: 0.84em;
+  width: 39.4em;
+  margin: 0 auto 0.5em auto;
+
+}
+
+.links_container {
+  text-align: center;
+  margin-bottom: 1em;
+
+  a {
+    font-family: $popup_font;
+    text-decoration: none;
+    color: #e064e0;
+  }
+
+  a:hover {
+    color: #ea3cea;
+    font-weight: bold;
+  }
+}
+
+.content {
+
+
+  #search_container {
+    width: 100%;
+    border-bottom: 1px solid #c481c4;
+    padding: 1em;
+
+    #search_bar {
+      width: 5em;
+      border: 1px solid #ce94ce;
+      border-radius: 4px;
+      padding: 0.5em 0.5em 0.5em 2.2em;
+      background-image: url("/search_icon.png");
+      background-repeat: no-repeat;
+      background-size: 2em 2em;
+      transition: width 0.5s ease-in-out;
+    }
+
+    #search_bar:focus {
+      width: 90%;
+      outline: none;
+    }
+
+    #search_submit {
+      border: 1px solid #ce94ce;
+      border-radius: 4px;
+      padding: 0.5em;
+      margin-right: 1em;
+      background-color: #fff;
+    }
+  }
+
+  .output {
+    width: 101%;
+    border-collapse: collapse;
+    overflow: hidden;
+
+    tr {
+      border-left: none;
+      width: 100%;
+    }
+  }
+}
